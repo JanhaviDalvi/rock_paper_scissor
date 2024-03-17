@@ -5,15 +5,28 @@ const roundResultField = document.getElementById("roundResult");
 const playerScoreField = document.getElementById("playerScore");
 const computerScoreField = document.getElementById("computerScore");
 const gameResultField = document.getElementById("gameResult");
+const playerOptions = document.getElementById("playerOptions");
+const playAgainBtn = document.getElementById("playAgainBtn");
 
-const totalRounds = parseInt(prompt("Rounds You Want To Play", 3));
+let currentRound;
+let playerScore;
+let computerScore;
+let totalRounds;
 
-let currentRound = 1;
-let playerScore = 0;
-let computerScore = 0;
-roundNumberField.textContent = currentRound;
-playerScoreField.textContent = playerScore;
-computerScoreField.textContent = computerScore;
+function resetGame(){
+    totalRounds = parseInt(prompt("Rounds You Want To Play", 3));
+    currentRound = 1;
+    playerScore = 0;
+    computerScore = 0;
+    roundNumberField.textContent = currentRound;
+    playerScoreField.textContent = playerScore;
+    computerScoreField.textContent = computerScore;
+    gameResultField.textContent = "";
+    playerOptions.style.pointerEvents = "auto";
+    playAgainBtn.style.display = "none";
+}
+
+resetGame();
 
 function playRound(playerChoice){
     playerChoiceField.textContent = playerChoice;
@@ -23,8 +36,9 @@ function playRound(playerChoice){
     const roundResult = getRoundResult(playerChoice, computerChoice);
     roundResultField.textContent = roundResult;
     if (isGameOver()){
-        // game result
-        gameResult.textContent = getGameResult();
+        gameResultField.textContent = getGameResult();
+        playAgainBtn.style.display = "inline-block";
+        playerOptions.style.pointerEvents = "none";
         return;
     }
     updateRound();

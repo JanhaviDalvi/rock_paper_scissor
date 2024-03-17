@@ -14,7 +14,7 @@
         <h5>Round Number: <span id="roundNumber"></span></h5>
         <p>Choose Your Move</p>
         <p>Score <span id="playerScore"></span> - <span id="computerScore"></span></p>
-        <div class="playerOptions">
+        <div class="playerOptions" id="playerOptions">
             <div class="playerOption" onclick="playRound('Rock')">
                 <img src="./img/rock.png" alt="rock sign">
                 <p>Rock</p>
@@ -32,14 +32,12 @@
             <p>Player's Choice: <span id="playerChoice"></span></p>
             <p>Computer's Choice: <span id="computerChoice"></span></p>
         </div>
-        <h3>Round Result: <span id="roundResult"></span></h3>
-
-        <!-- custom external js -->
-        <script src="./script.js"></script>
-
+        <h3>Round Result: <span id="roundResult"></span></h3>   
     </div>
 
+    <button id="playAgainBtn" onclick="resetGame()">Play Again</button>
     
-    
+    <!-- custom external js -->
+    <script src="./script.js"></script>
 </body>
 </html>

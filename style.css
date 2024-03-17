@@ -32,3 +32,18 @@ h3{
 .playerOption img{
     width: 40%;
 }
+
+button{
+    display: none;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #222831;
+    color: white;
+}
+
+button:hover{
+    background-color: #31363F;
+    box-shadow: 2px 2px 28px 2px rgba(17, 17, 17, 0.3);;
+}
