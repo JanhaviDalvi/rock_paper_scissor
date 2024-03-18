@@ -18,8 +18,8 @@ h3{
     background-color: azure;
     border-radius: 0.7rem;
     box-shadow: 2px 2px 28px 2px rgba(17, 17, 17, 0.5);
-    padding: 2rem 4rem;
-    width: 60%;
+    padding: 2rem 0rem;
+    width: 55%;
     margin: 0 auto;
     margin-top: 3rem;
 }
@@ -77,6 +77,8 @@ h5{
 
 .playerOptions{
     display: flex;
+    padding: 0 5rem;
+    width: 80%;
 }
 
 .currentChoices {
@@ -88,11 +90,36 @@ h5{
 }
 
 .playerOption img {
-    border: 2px solid; /* Initial border styling */
-    transition: border-color 0.3s ease; /* Transition effect for border color change */
+    border: 2px solid; 
+    transition: border-color 0.3s ease;
+    padding: 0rem 1.5rem;
 }
 
 .playerOption:hover img {
-    border-color: #d33636; /* Border color on hover */
+    border-color: #d33636; 
     box-shadow: 2px 2px 28px 2px rgba(17, 17, 17, 0.3);;
+}
+/* for smaller screens */
+@media (max-width: 711px){
+    .container {
+        width: 70%;
+    }
+
+    .choiceDisplay, .playerOptions, .scoreDisplay{
+        flex-direction: column; 
+        gap: 10px;
+        align-items: center;
+    }
+
+    .playerOptions{
+        /* text-align: center; */
+        width: fit-content;
+    }
+
+    .playerOption {
+        font-size: 18px;
+        padding: 2px;
+        /* width: 50%; */
+        width: fit-content;
+    }
 }
